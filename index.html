@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Craigslist Rediseñado</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Cabecera -->
+    <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="Craigslist Logo">
+            <div class="logo-text">
+                <h1>Craigslist</h1>
+                <p>Since its founding in 1995</p>   
+            </div>
+        </div>
+        <nav>
+            <a href="#">Inicio</a>
+            <a href="#">Categorías</a>
+            <a href="#">Ayuda</a>
+        </nav>
+        <div class="actions">
+            <button class="post-ad"><i class="fas fa-plus"></i> Anúnciate</button>
+            <button class="account"><i class="fas fa-user"></i> Cuenta</button>
+            <button id="dark-mode-toggle"><i class="fas fa-moon"></i></button>
+
+            <!-- Selector de Idioma -->
+            <select id="language-select">
+                <option value="es">Español</option>
+                <option value="en">English</option>
+                <option value="fr">Français</option>
+                <option value="de">Deutsch</option>
+                <option value="pt">Português</option>
+            </select>
+
+            <!-- Selector de Ubicación -->
+            <select id="location-select">
+                <option value="bogota">Montería</option>
+                <option value="medellin">Medellín</option>
+                <option value="monteria">Bogotá</option>
+                <option value="california">California</option>
+                <option value="cartagena">Cartagena</option>
+            </select>
+        </div>
+    </header>
+
+    <!-- Sección de Bienvenida -->
+    <section class="welcome">
+        <h1>Bienvenido a Craigslist</h1>
+        <p>Encuentra lo que necesitas o publica tu anuncio en segundos.</p>
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar anuncios...">
+            <select>
+                <option value="all">Todas las categorías</option>
+                <option value="community">Comunidad</option>
+                <option value="housing">Vivienda</option>
+                <option value="jobs">Trabajo</option>
+            </select>
+            <button><i class="fas fa-search"></i> Buscar</button>
+        </div>
+    </section>
+
+    <!-- Categorías Principales -->
+    <section class="main-categories">
+        <h2>Explora por Categorías</h2>
+        <div class="category-grid">
+            <div class="category-card">
+                <i class="fas fa-users"></i> <!-- Ícono de Comunidad -->
+                <h3>Comunidad</h3>
+            </div>
+            <div class="category-card">
+                <i class="fas fa-home"></i> <!-- Ícono de Vivienda -->
+                <h3>Vivienda</h3>
+            </div>
+            <div class="category-card">
+                <i class="fas fa-briefcase"></i> <!-- Ícono de Trabajo -->
+                <h3>Trabajo</h3>
+            </div>
+            <div class="category-card">
+                <i class="fas fa-concierge-bell"></i> <!-- Ícono de Servicios -->
+                <h3>Servicios</h3>
+            </div>
+            <div class="category-card">
+                <i class="fas fa-tags"></i> <!-- Ícono de Se Vende -->
+                <h3>Se Vende</h3>
+            </div>
+            <div class="category-card">
+                <i class="fas fa-calendar-alt"></i> <!-- Ícono de Eventos -->
+                <h3>Eventos</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Anuncios Destacados -->
+    <section class="featured-listings">
+        <h2>Anuncios Destacados</h2>
+        <div class="listing-grid">
+            <div class="listing-card">
+                <img src="images/bisicleta.jpg" alt="Anuncio 1">
+                <div class="listing-info">
+                    <h4>Se vende bicicleta de montaña</h4>
+                    <p>$900,000 COP - Bogotá</p>
+                    <button>Ver más</button>
+                </div>
+            </div>
+            <div class="listing-card">
+                <img src="images/arriendoVivienda.jpg" alt="Anuncio 2">
+                <div class="listing-info">
+                    <h4>Alquiler de apartamento en el centro</h4>
+                    <p>$3,200,000 COP/mes - Montería</p>
+                    <button>Ver más</button>
+                </div>
+            </div>
+            <div class="listing-card">
+                <img src="images/desarrolladorWeb.jpg" alt="Anuncio 3">
+                <div class="listing-info">
+                    <h4>Oferta de empleo: Desarrollador Web</h4>
+                    <p>$5,000,000 COP/mes - Remoto</p>
+                    <button>Ver más</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Sobre Craigslist</h3>
+                <ul>
+                    <li><a href="#">Quiénes Somos</a></li>
+                    <li><a href="#">Términos y Condiciones</a></li>
+                    <li><a href="#">Política de Privacidad</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Ayuda</h3>
+                <ul>
+                    <li><a href="#">Centro de Ayuda</a></li>
+                    <li><a href="#">Consejos de Seguridad</a></li>
+                    <li><a href="#">Reportar un Problema</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <ul>
+                    <li><a href="#">Soporte</a></li>
+                    <li><a href="#">Publicidad</a></li>
+                    <li><a href="#">Colaboraciones</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Craigslist. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
