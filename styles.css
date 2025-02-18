@@ -9,8 +9,8 @@ body {
 }
 
 body.dark-mode {
-    background-color: #2a2a2a;
-    color: #f8f8f8;
+    background-color: #121212;
+    color: #e0e0e0;
 }
 
 /* ===== CABECERA ===== */
@@ -22,9 +22,13 @@ header {
     background-color: #003366;
     color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    flex-wrap: wrap;
 }
 
-/* Logo */
+body.dark-mode header {
+    background-color: #1a1a1a; /* Fondo oscuro en cabecera */
+}
+
 header .logo {
     display: flex;
     align-items: center;
@@ -54,11 +58,15 @@ header .logo .logo-text p {
     color: #ffbf00;
 }
 
-/* Navegación */
+header nav {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
 header nav a {
     color: #ffffff;
     text-decoration: none;
-    margin: 0 15px;
     font-weight: bold;
     transition: color 0.3s;
 }
@@ -67,7 +75,12 @@ header nav a:hover {
     color: #ffbf00;
 }
 
-/* Botones de acción */
+header .actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 header .actions button {
     background-color: transparent;
     border: none;
@@ -82,12 +95,29 @@ header .actions button:hover {
     background-color: #ffbf00;
 }
 
+header .actions select {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ffbf00;
+    background-color: transparent;
+    color: white;
+}
+
+header .actions select option {
+    background-color: #003366;
+    color: white;
+}
+
 /* ===== SECCIÓN DE BIENVENIDA ===== */
 .welcome {
     text-align: center;
     padding: 60px 20px;
     background: linear-gradient(180deg, #003366 0%, #006699 100%);
     color: white;
+}
+
+body.dark-mode .welcome {
+    background: linear-gradient(180deg, #1a1a1a 0%, #333333 100%);
 }
 
 .welcome h1 {
@@ -100,13 +130,15 @@ header .actions button:hover {
     justify-content: center;
     gap: 10px;
     margin-top: 20px;
+    flex-wrap: wrap;
 }
 
 .welcome .search-bar input, 
 .welcome .search-bar select {
     padding: 10px;
     border-radius: 5px;
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
     border: 1px solid #ffbf00;
 }
 
@@ -121,6 +153,11 @@ header .actions button:hover {
     transition: background-color 0.3s;
 }
 
+body.dark-mode .welcome .search-bar button {
+    background-color: #ffbf00;
+    color: #1a1a1a;
+}
+
 .welcome .search-bar button:hover {
     background-color: #cc9a00;
 }
@@ -130,6 +167,10 @@ header .actions button:hover {
     padding: 40px 20px;
     background-color: #e8e8e8;
     text-align: center;
+}
+
+body.dark-mode .main-categories {
+    background-color: #222222;
 }
 
 .category-grid {
@@ -149,6 +190,10 @@ header .actions button:hover {
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
+body.dark-mode .category-card {
+    background-color: #333333;
+}
+
 .category-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
@@ -166,6 +211,10 @@ header .actions button:hover {
     text-align: center;
 }
 
+body.dark-mode .featured-listings {
+    background-color: #222222;
+}
+
 .listing-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -177,6 +226,10 @@ header .actions button:hover {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .listing-card {
+    background-color: #2a2a2a;
 }
 
 .listing-card img {
@@ -201,6 +254,10 @@ header .actions button:hover {
     color: #0073e6;
 }
 
+body.dark-mode .listing-info p {
+    color: #8ab4f8;
+}
+
 .listing-info button {
     background-color: #003366;
     color: white;
@@ -209,6 +266,10 @@ header .actions button:hover {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
+}
+
+body.dark-mode .listing-info button {
+    background-color: #1a1a1a;
 }
 
 .listing-info button:hover {
@@ -220,6 +281,10 @@ footer {
     background-color: #003366;
     color: white;
     padding: 40px 20px;
+}
+
+body.dark-mode footer {
+    background-color: #1a1a1a;
 }
 
 .footer-content {
@@ -259,12 +324,11 @@ footer {
     font-size: 1em;
 }
 
-.footer-section ul li a:hover {
+footer .footer-section ul li a:hover {
     color: #ffbf00;
     text-decoration: underline;
 }
 
-/* Línea separadora */
 .footer-bottom {
     margin-top: 30px;
     padding-top: 15px;
@@ -275,6 +339,41 @@ footer {
 
 /* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    header .menu-toggle {
+        display: block;
+    }
+
+    header nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    header nav.active {
+        display: flex;
+    }
+
+    header .actions {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .welcome .search-bar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .welcome .search-bar input,
+    .welcome .search-bar select {
+        max-width: 100%;
+    }
+
     .footer-content {
         flex-direction: column;
         text-align: left;
@@ -283,4 +382,34 @@ footer {
     .footer-section {
         margin-bottom: 20px;
     }
+}
+
+/* ===== MODO OSCURO ===== */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+/* Botón de cambio de modo */
+.dark-mode-toggle {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: #333;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1.5em;
+    transition: background-color 0.3s;
+}
+
+body.dark-mode .dark-mode-toggle {
+    background: #1a1a1a;
+    color: #f0f0f0;
+}
+
+body.dark-mode .dark-mode-toggle:hover {
+    background-color: #ffbf00;
 }
